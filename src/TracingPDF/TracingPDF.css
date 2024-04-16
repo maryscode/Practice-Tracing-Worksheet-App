@@ -1,0 +1,16 @@
+.page {
+  flex-direction: row;
+  background: red;
+}
+section {
+  margin: 10px;
+  padding: 10px;
+  flex-grow: 1;
+}
+
+iframe {
+  /* width: 400px;
+  height: 500px; */
+  width: 1400px;
+  height: 1000px;
+}

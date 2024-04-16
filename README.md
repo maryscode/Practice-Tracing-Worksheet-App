@@ -68,3 +68,15 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+### TO DO: 
+- width of tracing guide based on orientation
+- use map for repeating tracing lines
+- create sticker component
+- add disclaimers / instructions: 
+    - landscape/portrait
+    - all caps only
+    - toggle on and off sticker
+    - nonstandard font bc standard font is ugly!
+- create cute other sticker
