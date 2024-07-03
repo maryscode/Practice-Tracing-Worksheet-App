@@ -97,8 +97,8 @@ function Worksheet() {
 
           <h3 className='small'>Tips</h3>
           <p className="small">It is recommended to start with 1 or 2 lines to help your little one build confidence. Worksheets can be saved as PDFs for printing, reused in a sheet protector for use with dry-erase markers, or downloaded on an iPad as a GoodNotes template. Encourage letter writing by using names of friends, family, and favorite characters. </p>          
-
-          <p className='small'>Request new tools by emailing contact@printabletracing.com</p>
+          <p>Have Fun!</p>
+          {/* <p className='small'>Request new tools by emailing contact@printabletracing.com</p> */}
         </div>
       </header>
 
