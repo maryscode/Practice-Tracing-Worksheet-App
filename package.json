@@ -2,7 +2,7 @@
   "name": "pdf-worksheet",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://practicetracing.com",
+  "homepage": "https://practicetracing.com/public",
   "dependencies": {
     "@react-pdf/renderer": "^3.0.1",
     "@testing-library/jest-dom": "^5.14.1",
