@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# Practice Tracing React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -39,35 +39,12 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
 ### Deployment
+**Auto Deployment is set up with Hostinger**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+**Workflow:**
 
-
-*Auto Deployment* is set up with Hostinger
-Workflow:
 When changes are committed to Master branch, .github/workflows/publish.yml action will:
 1. Run a build step
 2. Push /build to `build` branch of same repo
@@ -76,8 +53,9 @@ Hostinger is set up to auto deploy the contents of /build directory to the root 
 
 Set up is based on the following resources:
 [Publish Sub-directory Action](https://github.com/s0/git-publish-subdir-action)
+
 [Create Deployment Pipeline for React App on Hostinger](https://dev.to/mwoodson11/create-deployment-pipeline-for-react-app-on-hostinger-5bc9)
-push : github/
+
 
 
 ### `yarn build` fails to minify
