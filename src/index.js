@@ -90,7 +90,7 @@ function Worksheet() {
           <h3>Instructions</h3>
           <ol>
             <li>Type name in the text field</li>
-            <li>Customize your worksheet by expanding the <span class="nobreak">"View Layout Options"</span> bottom tab. Edit repeat count, graphic on/off, and PDF orientation</li>
+            <li>Customize your worksheet by expanding the <span className="nobreak">"View Layout Options"</span> bottom tab. Edit repeat count, graphic on/off, and PDF orientation</li>
             <li>Click on the "Generate PDF" button to download the PDF</li>
             <li>Print the PDF from your computer</li>
           </ol>

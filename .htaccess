@@ -1,0 +1,5 @@
+// RewriteEngine on
+// RewriteCond %{HTTP_HOST} ^practicetracing.com$ [NC,OR]
+// RewriteCond %{HTTP_HOST} ^www.practicetracing.com$
+// RewriteCond %{REQUEST_URI} !build/
+// RewriteRule (.*) /build/$1 [L]
