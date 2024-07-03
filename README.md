@@ -40,12 +40,10 @@ Instead, it will copy all the configuration files and the transitive dependencie
 You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
 
-### Deployment
+## Available Scripts
 **Auto Deployment is set up with Hostinger**
 
-**Workflow:**
-
-When changes are committed to Master branch, .github/workflows/publish.yml action will:
+When changes are committed to the Master branch, .github/workflows/publish.yml action will:
 1. Run a build step
 2. Push /build to `build` branch of same repo
 
