@@ -1,4 +1,4 @@
-# Practice Tracing Printable PDF React App
+# Tracing Worksheets - PDF Generator
 
 This app dynamically generates a PDF tracing worksheet based on user input. Intended for students learning to write in uppercase English letters. 
 
