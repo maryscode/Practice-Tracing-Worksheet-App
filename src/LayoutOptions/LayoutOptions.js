@@ -4,7 +4,7 @@ function LayoutOptions(props){
 
     const [expand, setExpand] = useState("hide");
     const handleToggle = (e) =>{
-      (expand == "show") ? setExpand("hide") : setExpand("show");
+      (expand === "show") ? setExpand("hide") : setExpand("show");
     }
 
     return (

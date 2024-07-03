@@ -8,12 +8,13 @@ import close from './img/icon-close.png';
 import help from './img/icon-help.png';
 import LayoutOptions from './LayoutOptions/LayoutOptions';
 import TracingGuide from './TracingGuide/TracingGuide';
-// import TracingPDF from './TracingPDF/TracingPDF';
 import CurvedTitle from './CurvedTitle/CurvedTitle';
-// import { PDFDownloadLink, PDFViewer } from '@react-pdf/renderer';
 import PDFBtn from './PDFBtn/PDFBtn';
-
 import TagManager from 'react-gtm-module';
+
+// DEBUG
+// import TracingPDF from './TracingPDF/TracingPDF';
+// import { PDFViewer } from '@react-pdf/renderer';
 
 const tagManagerArgs = {
   gtmId: 'GTM-TFWMMWS'
@@ -49,14 +50,14 @@ function Worksheet() {
 
 
   const handleToggle = (e) => {
-    if (e.target.checked  == true){
+    if (e.target.checked === true){
         setSticker(true);
     } else {
         setSticker(false);
     }
   }
   const handleCaps = (e) => {
-    if (e.target.checked  == true){
+    if (e.target.checked === true){
         setCaps(true);
     } else {
         setCaps(false);
@@ -104,9 +105,9 @@ function Worksheet() {
 
       <div id='navigation' className='hideprint'>
         {showInfo ? 
-          <img src={close} onClick={handleInfo} id="close-icon" className="icon" />
+          <img src={close} alt="Close icon" onClick={handleInfo} id="close-icon" className="icon" />
           :
-          <img src={help} onClick={handleInfo} id="info-icon" className="icon" />
+          <img src={help} alt="Info icon" onClick={handleInfo} id="info-icon" className="icon" />
         }
       </div>
       
@@ -149,6 +150,9 @@ function Worksheet() {
 
         
       </main>
+
+      {/* DEBUG */}
+
       {/* <PDFViewer>
         <TracingPDF 
           name={name} 
@@ -159,13 +163,6 @@ function Worksheet() {
         />
       </PDFViewer>       */}
 
-      {/* <div className="donateform container hideprint">
-          <h4>About</h4>
-          <p>Printable Tracing is a free online tool for children that's supported by parents and educators like you! </p>
-          <p>Bookmark us and check back regularly as we release more useful tools!</p>
-          
-          <p>If you'd like to report a bug, request a new feature or tool, <a href="#">contact us here</a>. </p>
-      </div> */}
       <div className={`${orientation} donateform container hideprint`}>
       
           <h2>About</h2>
@@ -183,7 +180,7 @@ function Worksheet() {
       <div className="credits hideprint">
         
 
-        &copy; 2022 PrintableTracing.com | Email: contact@printabletracing.com | Image by <a href="https://www.freepik.com/free-vector/hand-drawn-adorable-fruit-collection_4188062.htm#query=kawaii%20cartoon%20fruit&position=6&from_view=search&track=sph">Freepik</a>
+        &copy; 2022-2024 PrintableTracing.com | Email: contact@printabletracing.com | Image by <a href="https://www.freepik.com/free-vector/hand-drawn-adorable-fruit-collection_4188062.htm#query=kawaii%20cartoon%20fruit&position=6&from_view=search&track=sph">Freepik</a>
       </div>
     </div>
   )

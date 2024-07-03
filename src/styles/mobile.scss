@@ -6,41 +6,48 @@
         &.landscape {
             width: auto !important;
         }        
-      }
-      main header {
-        transform: scale(.8)
-      }
-      #titlecontainer {
-        margin: 0;
-      }
-      .guide {
-          height: 68px;
-      }
-
-      main.portrait #container_guides,
-      main.portrait .guide {
-         width: 560px;
-      }
-      main.landscape #container_guides,
-      main.landscape .guide { 
-        width: 750px;
-      }
-
-      
-      .trace {
-        top: -7px;
-        font-size: 90px;
-      }
-      .midline {
-          border-width: 1px;
-          top: 33px;
-      }
-
-      .button {
-          margin: 60px 0;
-      }
-   
     }
+    main header {
+       //transform: scale(0.8) translateX(-93px);
+    }
+    #titlecontainer {
+    margin: 0;
+    }
+    .guide {
+        height: 68px;
+    }
+
+    main.portrait #container_guides,
+    main.portrait .guide {
+        width: 560px;
+    }
+    main.landscape #container_guides,
+    main.landscape .guide { 
+    width: 750px;
+    }
+
+    .trace {
+    top: -7px;
+    font-size: 90px;
+    }
+    .midline {
+        border-width: 1px;
+        top: 33px;
+    }
+
+    .button {
+        margin: 60px 0;
+    }
+
+    #stickerleft,
+    #stickerright {
+        position: absolute;
+        transform: scale(.5);
+        top: 0;
+    }
+    #stickerleft { left: -7%; }
+    #stickerright { right: -7%; }
+}
   
 
 
@@ -74,31 +81,51 @@
       }
     }
 
+    main {
+        padding-bottom: 0;
+    }
+
+    main header {
+        padding-top: 20px;
+    }
+
+    main.portrait #stickerleft,
+    main.portrait #stickerright { 
+        transform: scale(.2);
+        top: -20px;
+    }
+    #stickerleft { left: -80px }
+    #stickerright { right: -80px }
+    
+    #curvedtitle { transform: scale(.5)}
+
+
     .credits {
         padding-bottom: 60px;
     }
     header#worksheetheader {
-        transform: scale(.4) translateY(-100px);
+        //transform: scale(.4) translate(-290px,-100px);
     }   
     
-    #textinput {
-        position: absolute;
-        bottom: -350px;
-        margin-bottom: 0;
-        width: 650px;
-        padding: 50px;
-        font-size: 60px;
-        border-radius: 100px;
-        text-align: center;
-        border-width: 18px;
-    }
-    small {
-        bottom: -380px;
-        font-size: 20px;
-        position: absolute;
-    }
+    // #textinput {
+    //     position: absolute;
+    //     bottom: -230px;
+    //     margin-bottom: 0;
+    //     width: 650px;
+    //     padding: 50px;
+    //     font-size: 60px;
+    //     border-radius: 100px;
+    //     text-align: center;
+    //     border-width: 18px;
+    // }
+    // small {
+    //     bottom: -280px;
+    //     width: 100%;
+    //     font-size: 20px;
+    //     position: absolute;
+    // }
     #container_guides{
-        margin-top: 80px;
+        margin-top: 0;
     }
     .guide {
         height: 42px;

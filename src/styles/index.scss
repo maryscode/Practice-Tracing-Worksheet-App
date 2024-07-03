@@ -164,10 +164,10 @@ main header {
   }
 }
 #worksheetheader {
-  // background: transparent url("../img/pdf-bg.png") no-repeat 0 0;
-  // background-size: 100%;
+  
 }
 #titlecontainer {
+  width: 100%;
   margin: 40px 0;
 }
 #curvedtitle {
@@ -259,12 +259,6 @@ textPath{
   font-size: 50px;
   
 }
-// h2 {
-//   font-family: Georgia, 'Times New Roman', Times, serif;
-//   font-size: 30px;
-//   color: #ef5b5b;
-//   margin: 100px 0 40px;
-// }
 
 #stickerleft,
 #stickerright {
@@ -275,7 +269,6 @@ textPath{
   transition: all .5s;
   flex-shrink: 0;
   flex-grow: 0;
-  // border: 1px solid #666;
   img {
     position: absolute;
     top: 0;
@@ -477,11 +470,12 @@ main.landscape .guide {
   justify-content: center;
   padding: 20px;
   font-size: 20px;
-  width: 300px;
+  width: 310px;
   margin-top: 10px;
   border: 8px solid #eee;
   background-color: #ddd;
   border-radius: 30px;
+  box-sizing: border-box;
   // text-transform:uppercase;
 }
 #textinput::placeholder {

@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import TracingPDF from '../TracingPDF/TracingPDF';
-import { PDFDownloadLink, PDFViewer } from '@react-pdf/renderer';
+import { PDFDownloadLink } from '@react-pdf/renderer';
 
 const PDFBtn = (props) => {
     // const [typedname, setTypedname] = useState("");

@@ -18,11 +18,11 @@ Font.registerHyphenationCallback(word => {
 
 const styles = StyleSheet.create({
   page: { backgroundColor: 'white' },
-  section: { 
-    color: 'black', 
-    textAlign: 'center', 
-    margin: 30
-  },
+  // section: { 
+  //   color: 'black', 
+  //   textAlign: 'center', 
+  //   margin: 30
+  // },
   header: { 
     color: 'black', 
     textAlign: 'center', 
@@ -87,11 +87,10 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: -6,
     left: 0,
-    left: 0,
     fontSize: 83,
     fontFamily: 'quicksanddash',
     color: '#999',
-    // textTransform: 'uppercase',
+    textTransform: 'uppercase',
     width: '100%',
     textAlign: 'center'
   },
@@ -321,7 +320,7 @@ function TracingPDF(props) {
       : null} 
      
      <View style={styles.footer} wrap={false}>
-        <Text style={styles.footerText}>&copy; PrintableTracing.com</Text>
+        <Text style={styles.footerText}>&copy; PracticeTracing.com</Text>
       </View>     
     </Page>
   </Document>
