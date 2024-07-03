@@ -65,9 +65,26 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/a
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
+
+*Auto Deployment* is set up with Hostinger
+Workflow:
+When changes are committed to Master branch, .github/workflows/publish.yml action will:
+1. Run a build step
+2. Push /build to `build` branch of same repo
+
+Hostinger is set up to auto deploy the contents of /build directory to the root (i.e. /public_html) directory.
+
+Set up is based on the following resources:
+[Publish Sub-directory Action](https://github.com/s0/git-publish-subdir-action)
+[Create Deployment Pipeline for React App on Hostinger](https://dev.to/mwoodson11/create-deployment-pipeline-for-react-app-on-hostinger-5bc9)
+push : github/
+
+
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
 
 
 ### TO DO: 
@@ -79,4 +96,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
     - all caps only
     - toggle on and off sticker
     - nonstandard font bc standard font is ugly!
-- create cute other sticker
+- create other sticker options
