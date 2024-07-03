@@ -30,13 +30,14 @@ function LayoutOptions(props){
               <span className="slider round"></span>
             </label>
           </div> 
-          {/* <div id="textcase">
+          {/* 
+            <div id="textcase">
             <span className="label">Uppercase Letters Only</span>
             <label className="switch">
               <input id="stickertoggle" type="checkbox" defaultChecked onClick={props.setCaps} />
               <span className="slider round"></span>
             </label>
-          </div>                 */}
+          </div> */}
           <select id="orientation" onChange={props.orientation}>
             <option value="portrait">Portrait</option>
             <option value="landscape">Landscape</option>
