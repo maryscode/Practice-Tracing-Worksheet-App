@@ -185,8 +185,8 @@ main header {
   width: 180px;
   text-align: center;
   border-radius: 10px;
-  // font-weight: bold;
-  animation: bounceFadeOut 7s 1 forwards;
+  animation: bounceFadeOut 7s 2s 1 forwards;
+  opacity: 0;
   &:after {
     display: block;
     content: "";
@@ -204,9 +204,11 @@ main header {
 
 @keyframes bounceFadeOut {
   0% { 
+    opacity: 0;
     bottom: -20px; 
   }
   10% {
+    opacity: 1;
     bottom: -10px;
   }
   20% {
@@ -230,7 +232,8 @@ main header {
   80% {
     bottom: -20px;
   }
-  95% {
+  90% {
+    bottom: -10px;
     opacity: 1;
   }
   100% { 
@@ -339,7 +342,7 @@ textPath{
   flex-shrink: 0;
   flex-grow: 0;
   opacity: 0;
-  animation: fadeIn 1s 2s 1 forwards;
+  animation: fadeIn 1s 1s 1 forwards;
   img {
     position: absolute;
     top: 0;
