@@ -119,10 +119,11 @@ function Worksheet() {
             <input 
               id="textinput" 
               type="text" 
-              placeholder="Enter Name Here" 
+              placeholder="Type Name Here..." 
               onChange={(e) => setName(e.target.value)}
             />     
-                   <small className='hideprint'>*Converts to uppercase</small>
+            <small className='hideprint'>*Converts to uppercase</small>
+            <div className="tooltip">Start typing name here!</div>
           </div>
 
           { showSticker ? <StickerRight className={name ? [...name][0].toLowerCase() : null} /> : null }

@@ -116,6 +116,7 @@ main,
   border-radius: 10px;
   width: 1000px; // 8.5 in 
   box-sizing: border-box;
+  box-shadow: 2px 2px 15px rgba(66, 66, 66, .4);  
   &.landscape {
     width: 1250px;
   }
@@ -164,12 +165,80 @@ main header {
   }
 }
 #worksheetheader {
-  
+
 }
+
 #titlecontainer {
+  position: relative;
   width: 100%;
   margin: 40px 0;
 }
+.tooltip {
+  display: block;
+  padding: 10px;
+  background: rgba(165, 98, 252,.7);
+  color: #fff;
+  font-size: 13px;
+  position: absolute;
+  bottom: -20px;
+  left: -10px;
+  width: 180px;
+  text-align: center;
+  border-radius: 10px;
+  // font-weight: bold;
+  animation: bounceFadeOut 7s 1 forwards;
+  &:after {
+    display: block;
+    content: "";
+    position: absolute;
+    top: -11px;
+    right: 28px;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 0 15px 11px 16px;
+    border-color: transparent transparent rgba(165, 98, 252,.7) transparent;
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes bounceFadeOut {
+  0% { 
+    bottom: -20px; 
+  }
+  10% {
+    bottom: -10px;
+  }
+  20% {
+    bottom: -20px;
+  }
+  30% {
+    bottom: -10px;
+  }
+  40% { 
+    bottom: -20px; 
+  }
+  50% {
+    bottom: -10px;
+  }
+  60% {
+    bottom: -20px;
+  }
+  70% {
+    bottom: -10px;
+  }  
+  80% {
+    bottom: -20px;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% { 
+    bottom: -20px;
+    opacity: 0; 
+  }
+}
+
 #curvedtitle {
   width: 470px;
   height: 110px;
@@ -269,12 +338,22 @@ textPath{
   transition: all .5s;
   flex-shrink: 0;
   flex-grow: 0;
+  opacity: 0;
+  animation: fadeIn 1s 2s 1 forwards;
   img {
     position: absolute;
     top: 0;
     left: 0;
     // width: 1050px;
     width: 1540px;
+  }
+}
+@keyframes fadeIn {
+  0% { 
+    opacity: 0; 
+  }
+  100% { 
+    opacity: 1; 
   }
 }
 // #stickerleft { transform: rotate(-10deg);}
@@ -477,6 +556,8 @@ main.landscape .guide {
   border-radius: 30px;
   box-sizing: border-box;
   // text-transform:uppercase;
+  position: relative;
+
 }
 #textinput::placeholder {
   color: #999;
