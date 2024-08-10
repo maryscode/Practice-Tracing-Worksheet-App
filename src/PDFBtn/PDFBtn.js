@@ -24,7 +24,7 @@ const PDFBtn = (props) => {
         />
       } 
         fileName="trace-my-name.pdf" 
-        className={({ loading }) => loading ? 'loading': 'ready'}
+        // className={({ loading }) => loading ? 'loading': 'ready'}
       >
         {({ blob, url, loading, error }) =>
           loading ? <span>Loading document...</span> : `GENERATE PDF`

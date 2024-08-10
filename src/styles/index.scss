@@ -104,7 +104,7 @@ h2 {
 main {
   position: relative;
   background: #fff;
-  border-radius: 10px;
+  border-radius: 0;
   width: 1000px; // 8.5 in 
   height: 1054px; /* or height: 9.5in; */ 
   padding-bottom: 100px;
@@ -113,10 +113,10 @@ main {
 main,
 .container {
   margin: 30px auto 30px;
-  border-radius: 10px;
+  border-radius: 0;
   width: 1000px; // 8.5 in 
   box-sizing: border-box;
-  box-shadow: 2px 2px 15px rgba(66, 66, 66, .4);  
+  box-shadow: 2px 2px 7px rgba(66, 66, 66, .4);  
   &.landscape {
     width: 1250px;
   }
@@ -342,7 +342,7 @@ textPath{
   flex-shrink: 0;
   flex-grow: 0;
   opacity: 0;
-  animation: fadeIn 1s 1s 1 forwards;
+  animation: fadeIn 1s 1 forwards;
   img {
     position: absolute;
     top: 0;
