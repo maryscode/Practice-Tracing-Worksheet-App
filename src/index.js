@@ -165,10 +165,10 @@ function Worksheet() {
       </PDFViewer>       */}
 
       <div className={`${orientation} donateform container hideprint`}>
-      
           <h2>About</h2>
-          <p className='text-left'>PrintableTracing.com is a free and simple online tool that generates custom name tracing PDF worksheets.  Intended for parents and teachers who want to help children become familiar with writing their names. This worksheet supports capital letters only. Check back later for more helpful tools!</p>
-          <p>This site is fueled by coffee and your donations. <br /> Built by Mary &mdash; a mom who likes to code. Enjoy!</p>
+          <p className='text-left'>PracticeTracing.com is a free and simple online tool that generates custom name tracing PDF worksheets. Intended for parents and teachers who want to help children become familiar with writing their names. This worksheet supports capital letters only. Lowercase letters to come in Sept 2024. Check back later for more helpful tools!</p>
+
+          <p>Built by <a href="https://internetmary.com/" target="_blank" style={{'color' : 'white'}}>Mary Chan</a> &mdash; a mom who likes to code (and is sick of ads on everything...). Enjoy!</p>
           <form action="https://www.paypal.com/donate" method="post" target="_top">
               <input type="hidden" name="business" value="33JCAY8UGSUK8" />
               <input type="hidden" name="no_recurring" value="1" />
