@@ -27,12 +27,24 @@
     }
 
     .trace {
-    top: -7px;
-    font-size: 90px;
+        top: -7px;
+        font-size: 90px;
     }
+
     .midline {
         border-width: 1px;
         top: 33px;
+    }
+
+    .lowercase.guide {
+        .midline {
+            border-width: 1px;
+            top: 33px;
+        }
+        .trace {
+            top: -12px;
+            font-size: 101px;
+        }
     }
 
     .button {
@@ -147,6 +159,18 @@
         border-width: 1px;
         top: 20px;
     }
+
+    .lowercase.guide {
+        .midline {
+            border-width: 1px;
+            top: 20px;
+        }
+        .trace {
+            top: -6px;
+            font-size: 59px;
+        }
+    }
+
     #options {
         width: 100%;
     }

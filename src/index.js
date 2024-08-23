@@ -6,7 +6,7 @@ import './styles/mobile.scss';
 import sticker from './img/abc-grid.png';
 import close from './img/icon-close.png';
 import help from './img/icon-help.png';
-import LayoutOptions from './LayoutOptions/LayoutOptions';
+// import LayoutOptions from './LayoutOptions/LayoutOptions';
 import TracingGuide from './TracingGuide/TracingGuide';
 import CurvedTitle from './CurvedTitle/CurvedTitle';
 import PDFBtn from './PDFBtn/PDFBtn';
@@ -38,44 +38,94 @@ function StickerLeft(props){
   )
 }
 
-
 function Worksheet() {
   const [name, setName] = useState("");
   const [showSticker, setSticker] = useState(true); 
+  const [orientation, setOrientation] = useState('portrait');
   const [useCaps, setCaps] = useState(true); 
   const [showInfo, setInfo] = useState(false); 
   const [repeatCount, setRepeatcount] = useState(2);
   const [traceArray, setTraceArray] = useState([1,2]);
-  const [orientation, setOrientation] = useState('portrait');
+  
+  const [isAddDisabled, setIsAddDisabled] = useState(false);
+  const [isSubtractDisabled, setIsSubtractDisabled] = useState(false);
 
 
-  const handleToggle = (e) => {
-    if (e.target.checked === true){
-        setSticker(true);
+  const areAllLettersCaps = (inputString) => {
+    // Remove non-letter characters and check if the remaining string is all uppercase
+    const lettersOnly = inputString.replace(/[^a-zA-Z]/g, '');
+    return lettersOnly === lettersOnly.toUpperCase() && lettersOnly !== '';
+  }
+
+  const handleInputName = (e) => {
+    let name = e.target.value;
+    setName(name)
+
+    if (areAllLettersCaps(name)){
+      setCaps(true); 
     } else {
-        setSticker(false);
+      setCaps(false); 
     }
   }
-  const handleCaps = (e) => {
-    if (e.target.checked === true){
-        setCaps(true);
-    } else {
-        setCaps(false);
-    }
-  }
+  
+  // LAYOUT OPTIONS
+  // const handleToggle = (e) => {
+  //   if (e.target.checked === true){
+  //       setSticker(true);
+  //   } else {
+  //       setSticker(false);
+  //   }
+  // }
+  // const handleCaps = (e) => {
+  //   if (e.target.checked === true){
+  //       setCaps(true);
+  //   } else {
+  //       setCaps(false);
+  //   }
+  // }
+
   const handleRepeat = (e) => {
     let count = +e.target.value;
     let testArray = Array(count).fill(null);
     setRepeatcount(count);
     setTraceArray(testArray)
   } 
-  const handleOrientation = (e) => {
-    let newOrientation = e.target.value;
-    setOrientation(newOrientation);
-  }   
+  // const handleOrientation = (e) => {
+  //   let newOrientation = e.target.value;
+  //   setOrientation(newOrientation);
+  // }   
   const handleInfo = (e) => {
     (showInfo) ? setInfo(false) : setInfo(true);
   }
+
+  const handleAdd = (e) => {
+    setIsSubtractDisabled(false)
+   
+    // console.log('repeatCount at time of clicked: ', repeatCount);
+    
+    if (repeatCount < 4 ){
+      setRepeatcount(repeatCount + 1);
+      setTraceArray(Array(repeatCount + 1).fill(null))    
+    }
+    if (repeatCount === 3) {
+      setIsAddDisabled(true)
+    }
+  }
+
+  const handleSubtract = (e) => {
+    setIsAddDisabled(false)
+    if (repeatCount - 1 === 1 ){
+      setIsSubtractDisabled(true)
+    }
+
+    if (repeatCount > 1 ){
+      setRepeatcount(repeatCount - 1);
+      setTraceArray(Array(repeatCount - 1).fill(null))    
+    } else {
+      setIsSubtractDisabled(true)
+    }
+  }  
+
   const tracingGuides = traceArray.map((sq, i) => { 
     return (
       <TracingGuide value={name ? name : ""} key={i} caps={useCaps} />
@@ -90,7 +140,8 @@ function Worksheet() {
           <h3>Instructions</h3>
           <ol>
             <li>Type name in the text field</li>
-            <li>Customize your worksheet by expanding the <span className="nobreak">"View Layout Options"</span> bottom tab. Edit repeat count, graphic on/off, and PDF orientation</li>
+            <li>To add or remove lines, click on the +/- icons (4 lines max)</li>
+            {/* <li>Customize your worksheet by expanding the <span className="nobreak">"View Layout Options"</span> bottom tab. Edit repeat count, graphic on/off, and PDF orientation</li> */}
             <li>Click on the "Generate PDF" button to download the PDF</li>
             <li>Print the PDF from your computer</li>
           </ol>
@@ -112,6 +163,7 @@ function Worksheet() {
       </div>
       
       <main className={orientation}>
+        
         <header id="worksheetheader">
           { showSticker ? <StickerLeft className={name ? [...name][0].toLowerCase() : null} /> : null }
           <div id="titlecontainer">
@@ -120,33 +172,45 @@ function Worksheet() {
               id="textinput" 
               type="text" 
               placeholder="Type Name Here..." 
-              onChange={(e) => setName(e.target.value)}
+              onChange={handleInputName}
             />     
-            <small className='hideprint'>*Converts to uppercase</small>
+            {/* <small className='hideprint'>*All caps converts to a different font.</small> */}
             <div className="tooltip">Start typing name here!</div>
           </div>
 
           { showSticker ? <StickerRight className={name ? [...name][0].toLowerCase() : null} /> : null }
         </header>
-
         <div id='container_guides'>
-          {tracingGuides}
+          {tracingGuides} 
+          <button 
+            className="addBtn" 
+            onClick={handleAdd} 
+            disabled={isAddDisabled}
+          >+</button>
+          <button 
+            className="subtractBtn" 
+            onClick={handleSubtract} 
+            disabled={isSubtractDisabled}
+          >-</button>
         </div>
+        
+        
         <PDFBtn
           name={name}
           repeatCount={repeatCount}
           repeat={handleRepeat}
           showSticker={showSticker}
           orientation={orientation}
+          useCaps={useCaps}
         />
 
-        <LayoutOptions
+        {/* <LayoutOptions
           repeatCount={repeatCount}
           repeat={handleRepeat}
           toggleSticker={handleToggle}
           setCaps={handleCaps}
           orientation={handleOrientation}
-        />
+        /> */}
 
 
         
@@ -161,12 +225,13 @@ function Worksheet() {
           orientation={orientation} 
           firstletter={name ? [...name][0].toLowerCase() : 'a'} 
           stickerStatus={showSticker}
+          useCaps={useCaps}
         />
       </PDFViewer>       */}
 
       <div className={`${orientation} donateform container hideprint`}>
           <h2>About</h2>
-          <p className='text-left'>PracticeTracing.com is a free and simple online tool that generates custom name tracing PDF worksheets. Intended for parents and teachers who want to help children become familiar with writing their names. This worksheet supports capital letters only. Lowercase letters to come in Sept 2024. Check back later for more helpful tools!</p>
+          <p className='text-left'>PracticeTracing.com is a free and simple online tool that generates custom name tracing PDF worksheets. Intended for parents and teachers who want to help children become familiar with writing their names. Check back later for more helpful tools!</p>
 
           <p>Built by <a href="https://internetmary.com/" target="_blank" rel="noreferrer" style={{'color' : 'white'}}>Mary Chan</a> &mdash; a mom who likes to code. Enjoy!</p>
           <form action="https://www.paypal.com/donate" method="post" target="_top">

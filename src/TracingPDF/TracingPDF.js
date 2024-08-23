@@ -5,11 +5,17 @@ import title from '../img/hello-my-name-is.png';
 import './TracingPDF.css';
 import quicksandfont from '../fonts/quicksanddashregular-omwv-webfont.woff';
 import quicksandfontNormal from '../fonts/Outfit-Bold.ttf';
+import kgprimarydots from '../fonts/kgprimarydots-webfont.woff';
+// import quicksandfontNormal from '../fonts/Outfit-Bold.ttf';
 
 Font.register({ family: 'quicksanddash', fonts: [
   { src: quicksandfont }, // font-style: normal, font-weight: normal
   { src: quicksandfontNormal, fontWeight: 'bold' },
  ]});
+
+ Font.register({ family: 'kgprimarydots', fonts: [
+  { src: kgprimarydots }, // font-style: normal, font-weight: normal
+ ]}); 
 
 Font.registerHyphenationCallback(word => {
   // Return entire word as unique part
@@ -70,7 +76,7 @@ const styles = StyleSheet.create({
     // color: '#20a39e', // teal
     color: '#ffba49', // yellow
     fontSize: 50,
-    textTransform: 'uppercase',
+    // textTransform: 'uppercase',
     top: 150,
     width: '100%'
   },
@@ -83,17 +89,28 @@ const styles = StyleSheet.create({
     height: 100,
     overflow: 'hidden'
   },
-  name: {
+  capsName: {
     position: 'absolute',
-    top: -6,
     left: 0,
-    fontSize: 83,
-    fontFamily: 'quicksanddash',
     color: '#999',
-    textTransform: 'uppercase',
     width: '100%',
-    textAlign: 'center'
+    textAlign: 'center',
+    
+    // ALL CAPS
+    fontFamily: 'quicksanddash',
+    top: -6,
+    fontSize: 83
   },
+  lowercaseName: {
+    position: 'absolute',
+    left: 0,
+    color: '#999',
+    width: '100%',
+    textAlign: 'center',
+    fontFamily: 'kgprimarydots',
+    top: -10,
+    fontSize: 93
+  },  
   topline: {
     position: 'absolute',
     top: 0,
@@ -116,6 +133,17 @@ const styles = StyleSheet.create({
     margin: 0,
     padding: 0
   },
+  lowercaseMidline: {
+    position: 'absolute',
+    top: 30, 
+    left: 0,
+    width: '100%',
+    height: 0,
+    opacity: '.1',
+    borderTop: '3px dashed #ff5765',
+    margin: 0,
+    padding: 0
+  },  
   btmline: {
     position: 'absolute',
     top: '61px',
@@ -147,6 +175,9 @@ const styles = StyleSheet.create({
 
 // Create Document Component
 function TracingPDF(props) {
+
+  let nameStyle = props.useCaps ? styles.capsName : styles.lowercaseName;
+  let midlineStyle = props.useCaps ? styles.midline : styles.lowercaseMidline;
 
   // let letter = props.firstletter;
   // let firstletter = String(letter);
@@ -286,35 +317,35 @@ function TracingPDF(props) {
       </View>
       
       <View style={styles.section} wrap={false}>
-        <Text style={styles.name}>{props.name}</Text>
+        <Text style={nameStyle}>{props.name}</Text>
         <View style={styles.topline}></View>
-        <View style={styles.midline}></View>
+        <View style={midlineStyle}></View>
         <View style={styles.btmline}></View>
       </View>
 
       {(props.count >= 2) ? 
         <View style={styles.section}>
-          <Text style={styles.name}>{props.name}</Text>
+          <Text style={nameStyle}>{props.name}</Text>
           <View style={styles.topline}></View>
-          <View style={styles.midline}></View>
+          <View style={midlineStyle}></View>
           <View style={styles.btmline}></View>
         </View>  
       : null}
 
       {(props.count >= 3) ? 
           <View style={styles.section}>
-          <Text style={styles.name}>{props.name}</Text>
+          <Text style={nameStyle}>{props.name}</Text>
           <View style={styles.topline}></View>
-          <View style={styles.midline}></View>
+          <View style={midlineStyle}></View>
           <View style={styles.btmline}></View>
         </View>  
       : null}      
       
       {(props.count >= 4) ? 
           <View style={styles.section}>
-          <Text style={styles.name}>{props.name}</Text>
+          <Text style={nameStyle}>{props.name}</Text>
           <View style={styles.topline}></View>
-          <View style={styles.midline}></View>
+          <View style={midlineStyle}></View>
           <View style={styles.btmline}></View>
         </View>  
       : null} 

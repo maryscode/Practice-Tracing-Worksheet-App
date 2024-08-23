@@ -1,15 +1,22 @@
 import React, {useState, useEffect} from 'react';
 import TracingPDF from '../TracingPDF/TracingPDF';
 import { PDFDownloadLink } from '@react-pdf/renderer';
+import useDebounceCallback from '../hooks/useDebounceCallback';
 
 const PDFBtn = (props) => {
-    // const [typedname, setTypedname] = useState("");
     const [displayName, setDisplayName] = useState("");
-  
+
+    // Debounce hook
+    const updateDisplayName = useDebounceCallback(
+      (name) => {
+        setDisplayName(name);
+      },
+      1000
+    );
+
     useEffect(() => {
-      const timeOutId = setTimeout(() => setDisplayName(props.name), 1000);
-      return () => clearTimeout(timeOutId);
-    }, [props.name]);
+      updateDisplayName(props.name);
+    }, [props.name, updateDisplayName]);
     
     
   return (
@@ -21,6 +28,7 @@ const PDFBtn = (props) => {
             orientation={props.orientation} 
             firstletter={displayName ? [...displayName][0].toLowerCase() : 'a'}
             stickerStatus={props.showSticker}
+            useCaps={props.useCaps}
         />
       } 
         fileName="trace-my-name.pdf" 
@@ -29,6 +37,7 @@ const PDFBtn = (props) => {
         {({ blob, url, loading, error }) =>
           loading ? <span>Loading document...</span> : `GENERATE PDF`
         }
+        
       </PDFDownloadLink>
     </div>
   )

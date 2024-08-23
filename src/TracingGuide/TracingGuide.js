@@ -7,7 +7,7 @@ function TracingGuide(props){
         <div className="baseline"></div>
         <div className="trace">
             {props.value}
-            {props.caps}
+            {/* {props.caps} */}
             {/* abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ */}
         </div>
     </div>
