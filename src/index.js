@@ -40,8 +40,8 @@ function StickerLeft(props){
 
 function Worksheet() {
   const [name, setName] = useState("");
-  const [showSticker, setSticker] = useState(true); 
-  const [orientation, setOrientation] = useState('portrait');
+  // const [showSticker, setSticker] = useState(true); 
+  // const [orientation, setOrientation] = useState('portrait');
   const [useCaps, setCaps] = useState(true); 
   const [showInfo, setInfo] = useState(false); 
   const [repeatCount, setRepeatcount] = useState(2);
@@ -162,10 +162,12 @@ function Worksheet() {
         }
       </div>
       
-      <main className={orientation}>
+      {/* <main className={orientation}> */}
+      <main className='portrait'>
         
         <header id="worksheetheader">
-          { showSticker ? <StickerLeft className={name ? [...name][0].toLowerCase() : null} /> : null }
+          {/* { showSticker ? <StickerLeft className={name ? [...name][0].toLowerCase() : null} /> : null } */}
+          <StickerLeft className={name ? [...name][0].toLowerCase() : null} />
           <div id="titlecontainer">
             <CurvedTitle />
             <input 
@@ -178,7 +180,8 @@ function Worksheet() {
             <div className="tooltip">Start typing name here!</div>
           </div>
 
-          { showSticker ? <StickerRight className={name ? [...name][0].toLowerCase() : null} /> : null }
+          {/* { showSticker ? <StickerRight className={name ? [...name][0].toLowerCase() : null} /> : null } */}
+          <StickerRight className={name ? [...name][0].toLowerCase() : null} />
         </header>
         <div id='container_guides'>
           {tracingGuides} 
@@ -199,8 +202,10 @@ function Worksheet() {
           name={name}
           repeatCount={repeatCount}
           repeat={handleRepeat}
-          showSticker={showSticker}
-          orientation={orientation}
+          // showSticker={showSticker}
+          showSticker={true}
+          // orientation={orientation}
+          orientation='portrait'
           useCaps={useCaps}
         />
 
@@ -229,7 +234,8 @@ function Worksheet() {
         />
       </PDFViewer>       */}
 
-      <div className={`${orientation} donateform container hideprint`}>
+      {/* <div className={`${orientation} donateform container hideprint`}> */}
+      <div className={`portrait donateform container hideprint`}>
           <h2>About</h2>
           <p className='text-left'>PracticeTracing.com is a free and simple online tool that generates custom name tracing PDF worksheets. Intended for parents and teachers who want to help children become familiar with writing their names. Check back later for more helpful tools!</p>
 
