@@ -467,15 +467,15 @@ main.landscape .guide {
 }
 
 .lowercase.guide {
-  .midline { top: 46px;}
+  // .midline { top: 46px;}
   .trace {
     text-transform: none;    
     // font-size: 102px;
     // top: 16px;
 
-    font-family: 'kgprimarydots', arial;
-    top: -24px;
-    font-size: 162px;
+    font-family: 'kgprimarydots', Verdana, Geneva, Tahoma, sans-serif;
+    top: -14px;
+    font-size: 146px;
 
     // &::first-letter {
     //   text-transform: uppercase;
