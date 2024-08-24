@@ -42,6 +42,7 @@ function Worksheet() {
   const [name, setName] = useState("");
   // const [showSticker, setSticker] = useState(true); 
   // const [orientation, setOrientation] = useState('portrait');
+  const [tooltip, setTooltip] = useState(true); 
   const [useCaps, setCaps] = useState(true); 
   const [showInfo, setInfo] = useState(false); 
   const [repeatCount, setRepeatcount] = useState(2);
@@ -60,6 +61,7 @@ function Worksheet() {
   const handleInputName = (e) => {
     let name = e.target.value;
     setName(name)
+    setTooltip(false);
 
     if (areAllLettersCaps(name)){
       setCaps(true); 
@@ -177,7 +179,7 @@ function Worksheet() {
               onChange={handleInputName}
             />     
             {/* <small className='hideprint'>*All caps converts to a different font.</small> */}
-            <div className="tooltip">Start typing name here!</div>
+            <div className={`tooltip ${tooltip ? 'show' : 'hide'}`}>Start typing name here!</div>
           </div>
 
           {/* { showSticker ? <StickerRight className={name ? [...name][0].toLowerCase() : null} /> : null } */}

@@ -66,15 +66,16 @@
 
 @media only screen and (max-width: 844px) {
     #info {
-        top: 0;
+        top: 28px;
         right: 0;
-        width: 100%;
+        width: 90%;
         height: 100vh;
         padding-bottom: 150px;
         overflow: scroll;
         box-sizing: border-box;
+        opacity: 1;
         &.show {
-            right: 0px;
+            right: 5%;
         }
     }
 }
@@ -83,7 +84,9 @@
 
 
 @media only screen and (max-width: 767px) {
-    
+    h1 {
+        margin: 0;
+    }
     main, 
     .container {
       width: 360px;
