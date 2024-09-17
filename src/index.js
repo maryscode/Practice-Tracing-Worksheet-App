@@ -1,6 +1,7 @@
 import 'react-app-polyfill/stable';
 import React, {useState} from 'react';
 import ReactDOM from 'react-dom/client';
+
 import './styles/index.scss';
 import './styles/mobile.scss';
 import sticker from './img/abc-grid.png';
@@ -39,6 +40,7 @@ function StickerLeft(props){
 }
 
 function Worksheet() {
+
   const [name, setName] = useState("");
   // const [showSticker, setSticker] = useState(true); 
   // const [orientation, setOrientation] = useState('portrait');

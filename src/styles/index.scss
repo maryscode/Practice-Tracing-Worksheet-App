@@ -7,23 +7,7 @@
 .red {
   background-color: #ef5b5b;
 }
-@font-face {
-  font-family: 'quicksanddash';
-  src: url('../fonts/quicksanddashregular-omwv-webfont.woff2') format('woff2'),
-       url('../fonts/quicksanddashregular-omwv-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
 
-@font-face {
-  font-family: 'kgprimarydots';
-  src: url('../fonts/kgprimarydots-webfont.woff2') format('woff2'),
-       url('../fonts/kgprimarydots-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
 
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;

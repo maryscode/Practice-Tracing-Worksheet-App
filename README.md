@@ -42,7 +42,6 @@ Set up is based on the following resources:
 - create sticker component
 - add disclaimers / instructions: 
     - landscape/portrait
-    - all caps only
     - toggle on and off sticker
-    - nonstandard font bc standard font is ugly!
 - create other sticker options
+- TracingPDF.js to use fonts in /public/fonts directory instead of /src/fonts (duplicate)
